@@ -16,5 +16,9 @@ app.get('/login', frontendhandler);
 app.get('/home', frontendhandler);
 app.get('/add', frontendhandler);
 app.get('/show', frontendhandler);
+app.get('/plot', front);
 
+function front(req,res){
+    res.sendFile(__dirname+ '/prodadmin/test.html');
+}
 

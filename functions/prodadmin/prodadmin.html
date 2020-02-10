@@ -5,22 +5,41 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google-signin-client_id" content="604505848637-ei4rg9pjfp7fqjc61et8p7r1tinqgph5.apps.googleusercontent.com">
+
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/my.css"> 
+        <meta name="google-signin-client_id" content="604505848637-ei4rg9pjfp7fqjc61et8p7r1tinqgph5.apps.googleusercontent.com">
+    <!-- Latest compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
     <title>Product Admin</title>
 </head>
 
 <body>
     <h1 class="display-5" style="background-color: blue; color:white;">Product Admin's Page</h1>
     <div class="jumbotron" id="page_content"></div>
+    <div id="chart"></div>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/6.2.4/firebase-app.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
     <script defer src="/__/firebase/7.7.0/firebase-auth.js"></script>
     <script defer src="/__/firebase/7.7.0/firebase-firestore.js"></script>
     <script defer src="/__/firebase/7.7.0/firebase-storage.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+
+    <style>
+        .g-signin2{
+            margin-left: 650px;
+            margin-top: 50px;
+            
+        }
+        </style>
 
     <script>
         // Your web app's Firebase configuration
@@ -41,6 +60,8 @@
     <script src = "js/add_page.js"></script>
     <script src = "js/home_page.js"></script>
     <script src = "js/show_page.js"></script>
+    <script src= "js/script.js"> </script> 
+    <script src= "js/plot_page.js"></script>
     <script>
         const glPageContent = document.getElementById('page_content')
         const IMAGE_FOLDER = 'products/'
@@ -55,11 +76,18 @@
                 add_page()
             }else if (currentPath == '/show'){
                 show_page()
-            }else{
+            }else if (currentPath == '/plot'){
+                plot_page()
+            }
+            else{
                 window.location.href = '/'
             }
+
         }
         </script>
+        
+            <div class="g-signin2" id="check" data-onsuccess="onSignIn"></div>
+           
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

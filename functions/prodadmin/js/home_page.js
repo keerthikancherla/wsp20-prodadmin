@@ -1,21 +1,10 @@
-function home_page(){
+function home_page(googleUser){
     glPageContent.innerHTML = '<h1>Home Page</h1>'
-    home_page_secured()
+    home_page_secured(googleUser)
 }
-function home_page_secured(){
+function home_page_secured(googleUser){
     glPageContent.innerHTML = '<h1>Home Page</h1>'
-    glPageContent.innerHTML += `
-    <a href = '/add' class="btn btn-outline-primary">Add A Product</a>
-    <a href = '/show' class="btn btn-outline-primary">Show Products</a>
-    <button class = "btn btn-outline-danger" type="button" onclick="logOut()">Log Out</button>
-    `;
+    glPageContent.innerHTML += "Your Signed In"
+    
 }
 
-async function logOut(){
-    try{
-    await firebase.auth().signOut()
-    window.location.href = '/login'
-} catch (e){
-    window.location.href ='/login'
-}
-}
