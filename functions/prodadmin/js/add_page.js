@@ -1,7 +1,5 @@
-
 function add_page(){
-    glPageContent.innerHTML = '<h1>Add Page</h1>'
-    add_page_secured()
+    auth('prodadmin@test.com', add_page_secured, '/login')
 }
 
 let glImageFile2Add; //file selected by image button
@@ -41,10 +39,13 @@ async function addProduct(){
     const name = document.getElementById('name').value;
     const summary = document.getElementById('summary').value;
     let price = document.getElementById('price').value;
+
+    //input validation
     const nameErrorTag = document.getElementById('name_error')
     const summaryErrorTag = document.getElementById('summary_error')
     const priceErrorTag = document.getElementById('price_error')
     const imageErrorTag = document.getElementById('image_error')
+    
     nameErrorTag.innerHTML = validate_name(name)
     summaryErrorTag.innerHTML = validate_summary(summary)
     priceErrorTag.innerHTML = validate_price(price)
