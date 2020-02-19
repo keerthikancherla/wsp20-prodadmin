@@ -11,7 +11,7 @@ async function show_page_secured() {
         <a href = '/add' class="btn btn-outline-primary">Add A Product</a>
         <br>
     `;
-
+//added comment
     try {
         products = []
         const snapshot = await firebase.firestore().collection(COLLECTION).get()
