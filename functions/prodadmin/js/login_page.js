@@ -10,6 +10,7 @@ function login_page() {
     <input type="password" class="form-control" id="password" placeholder = "Password">
   <button type="button" class="btn btn-primary" onclick="signIn()">Submit</button>
 </form>
+<h1> test </h1>
            `;
         }
     })
