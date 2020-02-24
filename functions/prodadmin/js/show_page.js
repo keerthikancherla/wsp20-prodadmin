@@ -3,13 +3,13 @@ function show_page() {
 }
 
 let products; //list of products read from db
-
 async function show_page_secured() {
     glPageContent.innerHTML = '<h1>Show Products</h1>'
     glPageContent.innerHTML += `
         <a href = '/home' class="btn btn-outline-primary">Home</a>
         <a href = '/add' class="btn btn-outline-primary">Add A Product</a>
         <br>
+        <h1> hello</h1>
     `;
 //added comment
     try {
@@ -42,6 +42,8 @@ async function show_page_secured() {
                 onclick="editProduct(${index})">Edit</button>
             <button class="btn btn-danger" type="button"
                 onclick="deleteProduct(${index})">Delete</button>
+            <button type = "button" onclick="downloadProduct(${index})"> Download</button>
+            <h1>helloM</h1>
         </div>
     </div>
     `;
@@ -170,3 +172,4 @@ async function deleteProduct(index) {
         glPageContent.innerHTML = 'Delete Error: <br>' + JSON.stringify(e)
     }
 }
+
